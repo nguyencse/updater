@@ -245,11 +245,13 @@ pub fn send_patch_check_request(
     // Another option would be to make verbosity configurable via a key
     // in shorebird.yaml.
     info!("Sending patch check request: {:?}", request);
+    println!("nguyencse ==> Sending patch check request: {:?}", request);
     let url = &patches_check_url(&config.base_url);
     let patch_check_request_fn = config.network_hooks.patch_check_request_fn;
     let response = patch_check_request_fn(url, request)?;
 
     debug!("Patch check response: {:?}", response);
+    println!("nguyencse ==> Patch check response: {:?}", response);
     Ok(response)
 }
 
