@@ -246,12 +246,14 @@ pub fn send_patch_check_request(
     // in shorebird.yaml.
     info!("Sending patch check request: {:?}", request);
     println!("nguyencse ==> Sending patch check request: {:?}", request);
+    std::io::stdout().flush().unwrap();
     let url = &patches_check_url(&config.base_url);
     let patch_check_request_fn = config.network_hooks.patch_check_request_fn;
     let response = patch_check_request_fn(url, request)?;
 
     debug!("Patch check response: {:?}", response);
     println!("nguyencse ==> Patch check response: {:?}", response);
+    std::io::stdout().flush().unwrap();
     Ok(response)
 }
 
