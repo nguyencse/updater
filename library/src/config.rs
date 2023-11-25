@@ -16,7 +16,8 @@ use std::println as debug; // Workaround to use println! for logs.
 // cbindgen looks for const, ignore these so it doesn't warn about them.
 
 /// cbindgen:ignore
-const DEFAULT_BASE_URL: &str = "https://api.shorebird.dev";
+// const DEFAULT_BASE_URL: &str = "https://api.shorebird.dev";
+const DEFAULT_BASE_URL: &str = "http:localhost:8080";
 /// cbindgen:ignore
 const DEFAULT_CHANNEL: &str = "stable";
 
